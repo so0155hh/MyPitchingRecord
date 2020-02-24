@@ -7,16 +7,36 @@
 //
 
 import UIKit
+import RealmSwift
+
+let realm = try! Realm()
 
 class PitchesCounterViewController: UIViewController {
 
+    @IBOutlet weak var numberOfPitchesText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func saveBtn(_ sender: Any) {
+        let pitchesCount = Pitches()
+         pitchesCount.pitchesText = numberOfPitchesText.text!
+         //データを永続化
+         try! realm.write {
+             realm.add(pitchesCount)
+         }
+        let listVC = self.presentingViewController as! ListViewController
+       listVC.updateView()
+        // navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+         
+    }
     
-
+    @IBAction func cancelBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

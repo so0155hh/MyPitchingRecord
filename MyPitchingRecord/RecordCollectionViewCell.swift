@@ -10,4 +10,5 @@ import UIKit
 
 class RecordCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var pitchesLabel: UILabel!
 }
