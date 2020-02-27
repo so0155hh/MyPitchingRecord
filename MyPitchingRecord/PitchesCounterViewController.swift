@@ -10,41 +10,27 @@ import UIKit
 import RealmSwift
 
 let realm = try! Realm()
+let pitches = realm.objects(Pitches.self)
 
 class PitchesCounterViewController: UIViewController {
-
+    
     @IBOutlet weak var numberOfPitchesText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     @IBAction func saveBtn(_ sender: Any) {
         let pitchesCount = Pitches()
-         pitchesCount.pitchesText = numberOfPitchesText.text!
+         pitchesCount.sumOfPitches = numberOfPitchesText.text!
          //データを永続化
          try! realm.write {
              realm.add(pitchesCount)
          }
-        let listVC = self.presentingViewController as! ListViewController
-       listVC.updateView()
-        // navigationController?.popToRootViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
-         
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

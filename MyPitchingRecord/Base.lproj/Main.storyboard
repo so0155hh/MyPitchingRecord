@@ -8,21 +8,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sum View Controller-->
         <scene sceneID="1yV-5P-o7k">
             <objects>
-                <viewController id="8R0-Fk-qC1" sceneMemberID="viewController">
+                <viewController id="8R0-Fk-qC1" customClass="SumViewController" customModule="MyPitchingRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5xj-kB-BsE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累計投球数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-C3-P0p">
+                                <rect key="frame" x="29" y="84" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFB-UU-Mij">
+                                <rect key="frame" x="216" y="84" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1oj-C3-P0p" firstAttribute="top" secondItem="s7v-4a-wzK" secondAttribute="top" constant="40" id="GSB-Wi-1mP"/>
+                            <constraint firstItem="1oj-C3-P0p" firstAttribute="centerX" secondItem="5xj-kB-BsE" secondAttribute="centerX" constant="-80" id="V7E-Xc-rTR"/>
+                            <constraint firstItem="NFB-UU-Mij" firstAttribute="centerX" secondItem="5xj-kB-BsE" secondAttribute="centerX" constant="80" id="ce1-iQ-y6b"/>
+                            <constraint firstItem="NFB-UU-Mij" firstAttribute="bottom" secondItem="1oj-C3-P0p" secondAttribute="bottom" id="dvg-GY-YBg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="s7v-4a-wzK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WwS-uK-THP"/>
+                    <navigationItem key="navigationItem" id="WwS-uK-THP">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="7VA-av-Nnl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="oX4-a2-e7k"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sumLabel" destination="NFB-UU-Mij" id="kNr-vc-m8f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOh-bA-y86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344.9275362318842" y="267.85714285714283"/>
+            <point key="canvasLocation" x="1344" y="303"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="nHb-XG-KSi">
@@ -182,11 +208,11 @@
             </objects>
             <point key="canvasLocation" x="-482" y="-56"/>
         </scene>
-        <!--Item 1-->
+        <!--投球数一覧-->
         <scene sceneID="xsb-Yd-bjN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mmi-bW-zdP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="P1r-PI-62u"/>
+                    <tabBarItem key="tabBarItem" title="投球数一覧" id="P1r-PI-62u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lzI-lk-I7a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -201,11 +227,11 @@
             </objects>
             <point key="canvasLocation" x="434.78260869565219" y="-380.35714285714283"/>
         </scene>
-        <!--Item 2-->
+        <!--集計-->
         <scene sceneID="b8o-cc-Ag4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bx2-1t-twY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="hdS-BL-25o"/>
+                    <tabBarItem key="tabBarItem" title="集計" id="hdS-BL-25o"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bkn-b1-JGg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -15,6 +15,7 @@
 		9B4E5FA42404208D00746D36 /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E5FA32404208D00746D36 /* RecordCollectionViewCell.swift */; };
 		9B4E5FA6240420E000746D36 /* PitchesCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E5FA5240420E000746D36 /* PitchesCounterViewController.swift */; };
 		9B4E5FA8240422DB00746D36 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E5FA7240422DB00746D36 /* ListViewController.swift */; };
+		9B59E2372405E7C60013F280 /* SumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B59E2362405E7C50013F280 /* SumViewController.swift */; };
 		A0A994C815192D0039A5F55E /* Pods_MyPitchingRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD03E14220B45C611634AE /* Pods_MyPitchingRecord.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		9B4E5FA32404208D00746D36 /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B4E5FA5240420E000746D36 /* PitchesCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchesCounterViewController.swift; sourceTree = "<group>"; };
 		9B4E5FA7240422DB00746D36 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		9B59E2362405E7C50013F280 /* SumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumViewController.swift; sourceTree = "<group>"; };
 		E08E5FBA5DEB4579A68A0CC1 /* Pods-MyPitchingRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPitchingRecord.debug.xcconfig"; path = "Target Support Files/Pods-MyPitchingRecord/Pods-MyPitchingRecord.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				9B4E5FA7240422DB00746D36 /* ListViewController.swift */,
 				9B4E5FA32404208D00746D36 /* RecordCollectionViewCell.swift */,
 				9B4E5FA5240420E000746D36 /* PitchesCounterViewController.swift */,
+				9B59E2362405E7C50013F280 /* SumViewController.swift */,
 				9B4E5F9324041D3E00746D36 /* Main.storyboard */,
 				9B4E5F9624041D4000746D36 /* Assets.xcassets */,
 				9B4E5F9824041D4000746D36 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			files = (
 				9B4E5FA6240420E000746D36 /* PitchesCounterViewController.swift in Sources */,
 				9B4E5F8E24041D3E00746D36 /* AppDelegate.swift in Sources */,
+				9B59E2372405E7C60013F280 /* SumViewController.swift in Sources */,
 				9B4E5F9024041D3E00746D36 /* SceneDelegate.swift in Sources */,
 				9B4E5FA8240422DB00746D36 /* ListViewController.swift in Sources */,
 				9B4E5FA42404208D00746D36 /* RecordCollectionViewCell.swift in Sources */,
