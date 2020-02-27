@@ -51,7 +51,6 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
         }
     }
 }
-
 class Pitches: Object {
     @objc dynamic var pitchesText = ""
     @objc dynamic var sumOfPitches = 0

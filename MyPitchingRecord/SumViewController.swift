@@ -15,7 +15,6 @@ class SumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     //全データを取得して累計投球数を求めたい
     override func viewWillAppear(_ animated: Bool) {
