@@ -20,7 +20,7 @@ class SumViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let realm = try! Realm()
         let mySum = realm.objects(Pitches.self)
-        let sum:Int = mySum.sum(ofProperty: "sumOfPitches")
+        let sum:Int = mySum.sum(ofProperty: "pitchesText")
         sumLabel.text = String(sum)
     }
 

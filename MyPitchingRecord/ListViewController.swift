@@ -48,10 +48,12 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
         //データが追加された時にcollectionViewを更新する処理
         notificationToken = realm.observe { Notification, realm in
             self.collectionView.reloadData()
+            
         }
     }
 }
 class Pitches: Object {
     @objc dynamic var pitchesText = ""
+    @objc dynamic var situationText = ""
     @objc dynamic var sumOfPitches = 0
 }

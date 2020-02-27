@@ -75,14 +75,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="97" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投球数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPi-ho-g0e">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPi-ho-g0e">
                                                     <rect key="frame" x="8" y="10" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pND-SR-RMC">
-                                                    <rect key="frame" x="8" y="51" width="81" height="21"/>
+                                                    <rect key="frame" x="8" y="41" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="nPi-ho-g0e" secondAttribute="trailing" id="7ZG-5l-5oo"/>
                                                 <constraint firstItem="nPi-ho-g0e" firstAttribute="leading" secondItem="SST-7u-dqj" secondAttribute="leadingMargin" id="Ilb-XG-Zsv"/>
                                                 <constraint firstItem="pND-SR-RMC" firstAttribute="leading" secondItem="SST-7u-dqj" secondAttribute="leadingMargin" id="O8H-Re-Lke"/>
-                                                <constraint firstItem="pND-SR-RMC" firstAttribute="top" secondItem="nPi-ho-g0e" secondAttribute="bottom" constant="20" id="V1v-wD-evv"/>
+                                                <constraint firstItem="pND-SR-RMC" firstAttribute="top" secondItem="nPi-ho-g0e" secondAttribute="bottom" constant="10" id="V1v-wD-evv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pND-SR-RMC" secondAttribute="trailing" id="bOa-i4-EJn"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -101,6 +101,7 @@
                                         <size key="customSize" width="97" height="102"/>
                                         <connections>
                                             <outlet property="pitchesLabel" destination="pND-SR-RMC" id="uxQ-FW-qrV"/>
+                                            <outlet property="situationLabel" destination="nPi-ho-g0e" id="D3q-1k-ZUY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -156,7 +157,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投球数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ath-pc-b4u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投球数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ath-pc-b4u">
                                 <rect key="frame" x="0.0" y="96" width="320" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -167,23 +168,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="試合だった場合、" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dv-AB-22k">
+                                <rect key="frame" x="0.0" y="221" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DiG-CA-gaV">
+                                <rect key="frame" x="90" y="262" width="140" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="DiG-CA-gaV" firstAttribute="leading" secondItem="7VW-OF-F75" secondAttribute="leading" constant="90" id="4cW-Wz-bHB"/>
                             <constraint firstItem="4y0-PO-PkG" firstAttribute="leading" secondItem="7VW-OF-F75" secondAttribute="leading" id="BAk-gb-yTQ"/>
                             <constraint firstItem="MUG-aN-hJb" firstAttribute="trailing" secondItem="7VW-OF-F75" secondAttribute="trailing" id="Deh-ho-Ydj"/>
+                            <constraint firstItem="2dv-AB-22k" firstAttribute="leading" secondItem="7VW-OF-F75" secondAttribute="leading" id="IL6-x5-kG1"/>
+                            <constraint firstItem="7VW-OF-F75" firstAttribute="trailing" secondItem="DiG-CA-gaV" secondAttribute="trailing" constant="90" id="LDo-3F-86u"/>
                             <constraint firstItem="ath-pc-b4u" firstAttribute="top" secondItem="MUG-aN-hJb" secondAttribute="bottom" constant="40" id="S5E-UL-HFK"/>
                             <constraint firstItem="7VW-OF-F75" firstAttribute="trailing" secondItem="4y0-PO-PkG" secondAttribute="trailing" id="V9K-2l-Bbd"/>
                             <constraint firstItem="ath-pc-b4u" firstAttribute="leading" secondItem="7VW-OF-F75" secondAttribute="leading" id="aN8-Bv-7jW"/>
                             <constraint firstItem="4y0-PO-PkG" firstAttribute="top" secondItem="ath-pc-b4u" secondAttribute="bottom" constant="40" id="epd-ym-tXQ"/>
+                            <constraint firstItem="DiG-CA-gaV" firstAttribute="top" secondItem="2dv-AB-22k" secondAttribute="bottom" constant="20" id="fAe-Sd-Rr1"/>
                             <constraint firstItem="7VW-OF-F75" firstAttribute="trailing" secondItem="ath-pc-b4u" secondAttribute="trailing" id="lVg-4O-XBS"/>
+                            <constraint firstItem="2dv-AB-22k" firstAttribute="top" secondItem="4y0-PO-PkG" secondAttribute="bottom" constant="30" id="p2Y-SA-a9l"/>
                             <constraint firstItem="MUG-aN-hJb" firstAttribute="leading" secondItem="7VW-OF-F75" secondAttribute="leading" id="rVl-gs-QCZ"/>
                             <constraint firstItem="MUG-aN-hJb" firstAttribute="top" secondItem="7VW-OF-F75" secondAttribute="top" id="sGe-V2-3q9"/>
+                            <constraint firstItem="7VW-OF-F75" firstAttribute="trailing" secondItem="2dv-AB-22k" secondAttribute="trailing" id="uYi-t8-6LB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7VW-OF-F75"/>
                     </view>
                     <connections>
                         <outlet property="numberOfPitchesText" destination="4y0-PO-PkG" id="dkc-BV-PHB"/>
+                        <outlet property="selected" destination="DiG-CA-gaV" id="9Hu-NA-b2g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYA-9Z-3Nl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

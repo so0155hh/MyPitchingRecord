@@ -15,6 +15,8 @@ let pitches = realm.objects(Pitches.self)
 class PitchesCounterViewController: UIViewController {
     
     @IBOutlet weak var numberOfPitchesText: UITextField!
+    @IBOutlet weak var selected: UISegmentedControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,8 @@ class PitchesCounterViewController: UIViewController {
     }
     @IBAction func saveBtn(_ sender: Any) {
         let pitchesCount = Pitches()
-         pitchesCount.sumOfPitches = numberOfPitchesText.text!
+         pitchesCount.pitchesText = numberOfPitchesText.text!
+        
          //データを永続化
          try! realm.write {
              realm.add(pitchesCount)
@@ -33,4 +36,7 @@ class PitchesCounterViewController: UIViewController {
     @IBAction func cancelBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+
+    
 }

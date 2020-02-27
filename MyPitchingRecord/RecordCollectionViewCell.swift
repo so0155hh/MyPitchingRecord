@@ -11,4 +11,6 @@ import UIKit
 class RecordCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var pitchesLabel: UILabel!
+    @IBOutlet weak var situationLabel: UILabel!
+    
 }
