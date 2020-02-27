@@ -29,7 +29,7 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
         let pitches = realm.objects(Pitches.self)
         let pitchesData = pitches[indexPath.row]
         cell.pitchesLabel.text = pitchesData.pitchesText + "球"
-        
+       // cell.situationLabel.text = pitchesData.situationText
         return cell
     }
     
