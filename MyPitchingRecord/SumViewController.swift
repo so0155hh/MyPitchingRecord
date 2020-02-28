@@ -10,18 +10,21 @@ import UIKit
 import RealmSwift
 
 class SumViewController: UIViewController {
-
+    
+    var notificationToken: NotificationToken? = nil
+    
     @IBOutlet weak var sumLabel: UILabel!
     
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        //   全データを取得して累計投球数を求めたい
+        notificationToken = realm.observe { Notification, realm in
+            
+            let sum: Int = pitches.sum(ofProperty: "pitchesText")
+            
+            self.sumLabel.text = String(sum)
+            
+            self.sumLabel.reloadInputViews()
+        }
     }
-    //全データを取得して累計投球数を求めたい
-//    override func viewDidAppear(_ animated: Bool) {
-//        let realm = try! Realm()
-//        let mySum = realm.objects(Pitches.self)
-//        let sum:Int = mySum.sum(ofProperty: "pitchesText")
-//        sumLabel.text = String(sum)
-//    }
 }

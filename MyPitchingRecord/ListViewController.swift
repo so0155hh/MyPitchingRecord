@@ -48,7 +48,6 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
         //データが追加された時にcollectionViewを更新する処理
         notificationToken = realm.observe { Notification, realm in
             self.collectionView.reloadData()
-            
         }
     }
 }
