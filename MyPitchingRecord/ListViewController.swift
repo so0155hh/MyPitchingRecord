@@ -13,6 +13,8 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     //データが追加された時にcollectionViewを更新する処理
     var notificationToken: NotificationToken? = nil
+    let formatter = DateFormatter()
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //デフォルトのRealmを検索
@@ -28,7 +30,9 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
         let realm = try! Realm()
         let pitches = realm.objects(Pitches.self)
         let pitchesData = pitches[indexPath.row]
-        cell.pitchesLabel.text = pitchesData.pitchesText + "球"
+        formatter.dateFormat = "yyyy/MM/dd"
+        cell.dateLabel.text = formatter.string(from: pitchesData.registeredDay)
+        cell.pitchesLabel.text = String(pitchesData.pitchesText) + "球"
        // cell.situationLabel.text = pitchesData.situationText
         return cell
     }
@@ -41,7 +45,7 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
         collectionView.delegate = self
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.itemSize = CGSize(width: 200, height: 100)
         collectionView.collectionViewLayout = layout
         
         let realm = try! Realm()
@@ -52,7 +56,8 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
 }
 class Pitches: Object {
-    @objc dynamic var pitchesText = ""
+    @objc dynamic var pitchesText = 0
     @objc dynamic var situationText = ""
     @objc dynamic var sumOfPitches = 0
+    @objc dynamic var registeredDay = Date()
 }

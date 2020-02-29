@@ -18,13 +18,15 @@ class SumViewController: UIViewController {
      override func viewDidLoad() {
         super.viewDidLoad()
         //   全データを取得して累計投球数を求めたい
+      
+        
         notificationToken = realm.observe { Notification, realm in
             
-            let sum: Int = pitches.sum(ofProperty: "pitchesText")
+           let sum: Int = pitches.sum(ofProperty: "pitchesText")
             
-            self.sumLabel.text = String(sum)
+            self.sumLabel.text = String(sum) + "球"
             
-            self.sumLabel.reloadInputViews()
+          
         }
     }
 }

@@ -22,7 +22,7 @@ class PitchesCounterViewController: UIViewController {
     }
     @IBAction func saveBtn(_ sender: Any) {
         let pitchesCount = Pitches()
-         pitchesCount.pitchesText = numberOfPitchesText.text!
+        pitchesCount.pitchesText = Int(self.numberOfPitchesText.text!)!
         
          //データを永続化
          try! realm.write {
@@ -34,16 +34,5 @@ class PitchesCounterViewController: UIViewController {
     @IBAction func cancelBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-//    @IBAction func selectSegment(_ sender: UISegmentedControl) {
-//      //  let pitchesSituation = Pitches()
-//       // pitchesSituation.situationText =
-//        switch sender.selectedSegmentIndex {
-//        case 0:
-//            print("ブルペン")
-//        case 1:
-//            print("実戦")
-//        default:
-//            print("エラー")
-//        }
-//    }
+
 }
