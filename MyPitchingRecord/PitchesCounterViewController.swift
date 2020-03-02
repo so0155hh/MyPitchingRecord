@@ -12,18 +12,20 @@ import RealmSwift
 let realm = try! Realm()
 let pitches = realm.objects(Pitches.self)
 
+
 class PitchesCounterViewController: UIViewController {
     
     @IBOutlet weak var numberOfPitchesText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     @IBAction func saveBtn(_ sender: Any) {
+     
         let pitchesCount = Pitches()
+       
         pitchesCount.pitchesText = Int(self.numberOfPitchesText.text!)!
-        
+       
          //データを永続化
          try! realm.write {
              realm.add(pitchesCount)
@@ -34,5 +36,7 @@ class PitchesCounterViewController: UIViewController {
     @IBAction func cancelBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
 }
+ //  let sum : Int = realm.objects(Pitches.self).sum(ofProperty: "pitchesText")
+ //  let mySum = SumOfPitches()
+//    mySum.sumData = sum

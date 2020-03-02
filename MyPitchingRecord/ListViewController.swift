@@ -58,6 +58,9 @@ class ListViewController: UIViewController,UICollectionViewDelegate,UICollection
 class Pitches: Object {
     @objc dynamic var pitchesText = 0
     @objc dynamic var situationText = ""
-    @objc dynamic var sumOfPitches = 0
+  //  @objc dynamic var sumOfPitches = 0
     @objc dynamic var registeredDay = Date()
+}
+class SumOfPitches: Object {
+    @objc dynamic var sumData = 0
 }
